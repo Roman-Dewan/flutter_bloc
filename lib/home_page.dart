@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test03/cubit/counter_cubit.dart';
+import 'package:test03/bloc/counter_bloc.dart';
+// import 'package:test03/cubit/counter_cubit.dart';
 import 'package:test03/increment_decrmenet.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -24,7 +25,7 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             const Text('You have pushed the button this many times:'),
             
-            BlocBuilder<CounterCubit, int>(
+            BlocBuilder<CounterBloc, int>(
               // bloc: counterCubit,
               builder: (context, counter) {
                 return Text(
