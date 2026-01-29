@@ -12,16 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context)=> CounterCubit()),
-      ],
+    return  BlocProvider(
+      create: (context) => CounterCubit(),
       child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        ),
-        home: const MyHomePage(title: 'Flutter Demo Home Page'),
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          ),
+          home:  MyHomePage(title: 'Flutter Demo Home Page'),
       ),
     );
   }
