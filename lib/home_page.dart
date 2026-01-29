@@ -10,7 +10,8 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final counterCubit = BlocProvider.of<CounterCubit>(context);
+    // don't need.
+    // final counterCubit = BlocProvider.of<CounterCubit>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -24,7 +25,7 @@ class MyHomePage extends StatelessWidget {
             const Text('You have pushed the button this many times:'),
             
             BlocBuilder<CounterCubit, int>(
-              bloc: counterCubit,
+              // bloc: counterCubit,
               builder: (context, counter) {
                 return Text(
                   '$counter',
@@ -39,13 +40,11 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         heroTag: 'home_page_fab',
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => BlocProvider.value(
-                value: counterCubit,
-                child: const IncrementDecrmenet(),
-          )));
+          // Navigator.push(context,
+          //   MaterialPageRoute(builder: (_) => BlocProvider.value(value: counterCubit,
+          //       child: const IncrementDecrmenet(),
+          // )));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> IncrementDecrmenet()));
         },
         child: const Icon(Icons.arrow_circle_right_rounded),),
       
